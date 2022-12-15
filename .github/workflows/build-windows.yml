@@ -29,3 +29,9 @@ jobs:
 
     - name: Build solution
       run: msbuild BinDumper.sln -t:rebuild -property:Configuration=Release
+      
+    - name: Upload
+      uses: actions/upload-artifact@v3
+      with:
+          name: output
+          path: ${{ github.workspace }}
